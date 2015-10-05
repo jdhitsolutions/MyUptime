@@ -182,8 +182,8 @@ CHI-CORE01       9/29/2015 11:43:03 AM       0     0       2       9
 
 New results.
 .Notes
-Last Updated: September 29, 2015
-Version     : 3.0
+Last Updated: October 5, 2015
+Version     : 3.1
 
 Learn more about PowerShell:
 http://jdhitsolutions.com/blog/essential-powershell-resources/
@@ -237,13 +237,12 @@ Param(
 
 Begin {
     Write-Verbose "[STATUS] Starting $($MyInvocation.Mycommand)"  
-    Write-Verbose "[DETAIL] Using parameter set $($PSCmdlet.ParameterSetName)"
     Write-Verbose "[DETAIL] PSBoundParameters"
     Write-Verbose  ($PSBoundParameters | Out-String).Trim()
 } #begin
 
 Process {
-
+ Write-Verbose "[DETAIL] Using parameter set $($PSCmdlet.ParameterSetName)"
     if ($PSCmdlet.ParameterSetName -eq "Session") {
         Write-Verbose "[STATUS] Getting uptime via existing CIMSessions"
          Try {
@@ -251,13 +250,19 @@ Process {
                 Select-Object -property CSName,LastBootUpTime,@{Name="CimSession";Expression={$True}}
 
                 #insert a new type name for the object for each
-                ($obj).foreach({$_.psobject.Typenames.Insert(0,'My.Uptime')})
+                #use the new ForEach if $obj is an array
+                if ($obj -is [array]) {
+                    ($obj).foreach({$_.psobject.Typenames.Insert(0,'My.Uptime')})
+                }
+                else {
+                    $obj.psobject.Typenames.Insert(0,'My.Uptime')
+                }
 
                 #write the object to the pipeline
                 $obj
             } #Try
             Catch {
-               Write-Warning "[ERROR] Failed to get CIM instance from $($computer.toupper())"
+               Write-Warning "[ERROR] Failed to get CIM instance from $($cimsession.computername.toupper())"
                Write-Warning "[DETAIL] $($_.exception.message)"
             } #Catch
 
@@ -277,8 +282,8 @@ Process {
             #no testing so assume OK to proceed
             $OK = $True
         }
-            #get uptime of OK
-
+            
+        #get uptime if OK
         if ($OK) {
             Write-Verbose "[STATUS] Getting uptime from $($computer.toUpper())"
             Try {
