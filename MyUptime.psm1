@@ -236,15 +236,15 @@ Param(
 )
 
 Begin {
-    Write-Verbose "[STATUS] Starting $($MyInvocation.Mycommand)"  
-    Write-Verbose "[DETAIL] PSBoundParameters"
+    Write-Verbose "[BEGIN  ] Starting $($MyInvocation.Mycommand)"  
+    Write-Verbose "[BEGIN  ] PSBoundParameters"
     Write-Verbose  ($PSBoundParameters | Out-String).Trim()
 } #begin
 
 Process {
- Write-Verbose "[DETAIL] Using parameter set $($PSCmdlet.ParameterSetName)"
+ Write-Verbose "[PROCESS] Using parameter set $($PSCmdlet.ParameterSetName)"
     if ($PSCmdlet.ParameterSetName -eq "Session") {
-        Write-Verbose "[STATUS] Getting uptime via existing CIMSessions"
+        Write-Verbose "[PROCESS] Getting uptime via existing CIMSessions"
          Try {
                 $obj = Get-CimInstance -classname Win32_OperatingSystem -cimsession $cimSession -ErrorAction Stop |
                 Select-Object -property CSName,LastBootUpTime,@{Name="CimSession";Expression={$True}}
@@ -262,21 +262,21 @@ Process {
                 $obj
             } #Try
             Catch {
-               Write-Warning "[ERROR] Failed to get CIM instance from $($cimsession.computername.toupper())"
-               Write-Warning "[DETAIL] $($_.exception.message)"
+               Write-Warning "[PROCESS] Failed to get CIM instance from $($cimsession.computername.toupper())"
+               Write-Warning "[PROCESS] $($_.exception.message)"
             } #Catch
 
     } #if using Sessions
     else {
     #process computer names individually in case we have to test
     Foreach ($computer in $computername) {
-        Write-Verbose "[STATUS] Processing $($computer.toUpper())"
+        Write-Verbose "[PROCESS] Processing $($computer.toUpper())"
         if ($Test -AND (IsWsManAvailable -Computername $computer)) { 
            $OK = $True
           } 
         elseif ($Test -AND -Not (IsWsManAvailable -Computername $computer)){
             $OK = $False
-            Write-Warning "[ERROR] $($Computer.toUpper()) is not accessible via the WSMan protocol."
+            Write-Warning "[PROCESS] $($Computer.toUpper()) is not accessible via the WSMan protocol."
           }
         else {
             #no testing so assume OK to proceed
@@ -285,7 +285,7 @@ Process {
             
         #get uptime if OK
         if ($OK) {
-            Write-Verbose "[STATUS] Getting uptime from $($computer.toUpper())"
+            Write-Verbose "[PROCESS] Getting uptime from $($computer.toUpper())"
             Try {
                 $obj = Get-CimInstance -classname Win32_OperatingSystem -ComputerName $computer -ErrorAction Stop  | 
                 Select-Object -property CSName,LastBootUpTime,@{Name="CimSession";Expression={$False}}
@@ -297,15 +297,15 @@ Process {
                 $obj
             } #Try
             Catch {
-               Write-Warning "[ERROR] Failed to get CIM instance from $($computer.toupper())"
-               Write-Warning "[DETAIL] $($_.exception.message)"
+               Write-Warning "[PROCESS] Failed to get CIM instance from $($computer.toupper())"
+               Write-Warning "[PROCESS] $($_.exception.message)"
             } #Catch
 
         } #if OK
 
          #reset variable so it doesn't accidentally get re-used, especially when using the ISE
          #ignore any errors if the variable doesn't exit
-         Write-Verbose "[STATUS] Removing obj variable"
+         Write-Verbose "[PROCESS] Removing obj variable"
          Remove-Variable -Name obj -ErrorAction SilentlyContinue
       
       } #foreach
@@ -313,7 +313,7 @@ Process {
 } #process
 
 End {
-    Write-Verbose "[STATUS] Ending $($MyInvocation.Mycommand)"
+    Write-Verbose "[END    ] Ending $($MyInvocation.Mycommand)"
 } #end
 
 } #end function
