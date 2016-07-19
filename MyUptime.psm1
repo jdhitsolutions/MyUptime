@@ -92,7 +92,7 @@ MyUptime ( [Microsoft.Management.Infrastructure.CimSession]$CimSession) {
     $this.Hours = $up.Hours
     $this.Minutes = $up.Minutes
     $this.Seconds = $up.Seconds
-    #$this.psobject.Typenames.Insert(0,'My.Uptime')
+    
   }
   catch {
     Write-Error "[$($CimSession.Computername)] $($_.exception.message)"
@@ -130,5 +130,8 @@ MyUptime ([string]$Computername) {
 
 #define a custom alias
 Set-Alias -Name gmu -Value Get-MyUptime
+Set-Alias -name gtz -Value Get-MyTimeZone
+Set-Alias -Name glt -Value Get-MyLocalTime
+Set-Alias -Name umu -Value Update-MyUptime
 
 #endregion

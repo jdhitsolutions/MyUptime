@@ -2,7 +2,7 @@
 <Configuration>
     <ViewDefinitions>
         <View>
-            <Name>UptimeTable</Name>
+            <Name>default</Name>
             <ViewSelectedBy>
                 <TypeName>MyUptime</TypeName>
             </ViewSelectedBy>
@@ -60,6 +60,47 @@
                             </TableColumnItem>
                             <TableColumnItem>
                                 <PropertyName>Seconds</PropertyName>
+                            </TableColumnItem>
+                        </TableColumnItems>
+                    </TableRowEntry>
+                </TableRowEntries>
+            </TableControl>
+        </View>
+        <View>
+            <Name>Uptime</Name>
+            <ViewSelectedBy>
+                <TypeName>MyUptime</TypeName>
+            </ViewSelectedBy>
+            <TableControl>
+            <!-- ################ TABLE DEFINITIONS ################ -->
+            <TableHeaders>
+                    <TableColumnHeader>
+                        <Label>Computername</Label>
+                        <Width>16</Width>
+                        <Alignment>left</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>LastRebootTime</Label>
+                        <Width>23</Width>
+                        <Alignment>left</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Uptime</Label>
+                        <Width>20</Width>
+                        <Alignment>right</Alignment>
+                    </TableColumnHeader>
+                    </TableHeaders>
+                <TableRowEntries>
+                    <TableRowEntry>
+                        <TableColumnItems>
+                            <TableColumnItem>
+                                <PropertyName>Computername</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>LastRebootTime</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>Uptime</PropertyName>
                             </TableColumnItem>
                         </TableColumnItems>
                     </TableRowEntry>

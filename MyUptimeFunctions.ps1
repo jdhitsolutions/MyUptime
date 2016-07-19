@@ -1,4 +1,6 @@
-﻿#define a private function to be used in this command
+﻿#requires -version 5.0
+
+#define a private function to be used in this command
 Function IsWsManAvailable {
 [cmdletbinding()]
 Param([string]$Computername)
@@ -114,7 +116,7 @@ End {
 Function Get-MyTimeZone {
 [cmdletbinding()]
 Param(
-[Parameter(Position = 0, ValueFromPipeline, Mandatory)]
+[Parameter(Position = 0, Mandatory, ValueFromPipeline )]
 [ValidateNotNullorEmpty()]
 [MyUptime[]]$ComputerObject
 )
