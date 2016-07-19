@@ -4,7 +4,7 @@
         <View>
             <Name>UptimeTable</Name>
             <ViewSelectedBy>
-                <TypeName>My.Uptime</TypeName>
+                <TypeName>MyUptime</TypeName>
             </ViewSelectedBy>
             <TableControl>
             <!-- ################ TABLE DEFINITIONS ################ -->
@@ -69,7 +69,7 @@
          <View>
             <Name>UptimeList</Name>
             <ViewSelectedBy>
-                <TypeName>My.Uptime</TypeName>
+                <TypeName>MyUptime</TypeName>
             </ViewSelectedBy>
             <ListControl>
             <!-- ################ LIST DEFINITIONS ################ -->

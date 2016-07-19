@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml">
+
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Get-MyLocalTime</command:name>
+<command:verb>Get</command:verb>
+<command:noun>MyLocalTime</command:noun>
+<maml:description><maml:para>Get local time information
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>This command uses computer objects created with Get-MyUptime to retrieve local time information.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Get-MyLocalTime</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none"><maml:name>ComputerObject</maml:name>
+<maml:Description><maml:para>A computer object created with Get-MyUptime
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">MyUptime[]</command:parameterValue>
+<dev:type><maml:name>MyUptime[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none"><maml:name>ComputerObject</maml:name>
+<maml:Description><maml:para>A computer object created with Get-MyUptime
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">MyUptime[]</command:parameterValue>
+<dev:type><maml:name>MyUptime[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>MyUptime[]</maml:name>
+</dev:type>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>MyLocalTime</maml:name>
+</dev:type>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert>
+<maml:para>
+Last Updated: July 19, 2016
+Version     : 4.0
+</maml:para>
+<maml:para>Learn more about PowerShell: http://jdhitsolutions.com/blog/essential-powershell-resources/
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+<dev:code>PS C:\&gt; $c = Get-MyUptime -computername chi-dc04,chi-p50,chi-hvr2
+PS C:\&gt; $c | get-mylocaltime
+
+Computername LocalDateTime        
+------------ -------------        
+CHI-DC04     7/19/2016 12:37:27 PM
+CHI-P50      7/19/2016 12:37:27 PM
+CHI-HVR2     7/19/2016 12:37:27 PM</dev:code>
+<dev:remarks><maml:para>
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks><maml:navigationLink><maml:linkText>Get-MyUptime</maml:linkText>
+<maml:uri></maml:uri>
+</maml:navigationLink>
+<maml:navigationLink><maml:linkText>Get-MyTimeZone</maml:linkText>
+<maml:uri></maml:uri>
+</maml:navigationLink>
+</command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Get-MyTimeZone</command:name>
+<command:verb>Get</command:verb>
+<command:noun>MyTimeZone</command:noun>
+<maml:description><maml:para>Get time zone information
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>This command uses computer objects created with Get-MyUptime to retrieve time zone information.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Get-MyTimeZone</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none"><maml:name>ComputerObject</maml:name>
+<maml:Description><maml:para>A computer object created with Get-MyUptime
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">MyUptime[]</command:parameterValue>
+<dev:type><maml:name>MyUptime[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none"><maml:name>ComputerObject</maml:name>
+<maml:Description><maml:para>A computer object created with Get-MyUptime
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">MyUptime[]</command:parameterValue>
+<dev:type><maml:name>MyUptime[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>MyUptime[]</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>MyTimeZone</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+Last Updated: July 19, 2016 
+Version     : 4.0
+</maml:para>
+<maml:para>Learn more about PowerShell: http://jdhitsolutions.com/blog/essential-powershell-resources/
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+<dev:code>PS C:\&gt; $c = Get-MyUptime -computername chi-dc04,chi-p50,chi-hvr2
+PS C:\&gt; $c | get-mytimezone
+
+Computername Caption                                CurrentTimeZone
+------------ -------                                ---------------
+CHI-DC04     (UTC-05:00) Eastern Time (US &amp; Canada)            -240
+CHI-P50      (UTC-05:00) Eastern Time (US &amp; Canada)            -240
+CHI-HVR2     (UTC-05:00) Eastern Time (US &amp; Canada)            -240</dev:code>
+<dev:remarks><maml:para>
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks><maml:navigationLink><maml:linkText>Get-MyUptime</maml:linkText>
+<maml:uri></maml:uri>
+</maml:navigationLink>
+<maml:navigationLink><maml:linkText>Get-MyLocalTime</maml:linkText>
+<maml:uri></maml:uri>
+</maml:navigationLink>
+</command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Get-MyUptime</command:name>
+<command:verb>Get</command:verb>
+<command:noun>MyUptime</command:noun>
+<maml:description><maml:para>Get computer uptime.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>This command will query the Win32_OperatingSystem class using Get-CimInstance and write an uptime object to the pipeline. You must run this with credentials that have administrator rights on the remote computer.
+</maml:para>
+<maml:para>This PowerShell function is designed to make it easy to get uptime information for one or more remote computers. The command uses the CIM cmdlets so any remote computer must be running at least PowerShell 3.0 with remoting enabled. You can use computer names or existing CIM sessions. If you use a computer name you can also test to see if it is PowerShell v3 compatible.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Get-MyUptime</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="cn, name"><maml:name>Computername</maml:name>
+<maml:Description><maml:para>The name of the computer to query. This parameter has an alias of CN and Name. The computer must be running PowerShell 3.0 or later with remoting enabled to support the CIM cmdlets.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+<dev:type><maml:name>String[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>$env:Computername</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Test</maml:name>
+<maml:Description><maml:para>Use Test-WSMan to verify computer can be reached and is running v3 or later of the Windows Management Framework stack.
+</maml:para>
+</maml:Description>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+<command:syntaxItem><maml:name>Get-MyUptime</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none"><maml:name>CimSession</maml:name>
+<maml:Description><maml:para>
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+<dev:type><maml:name>CimSession[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="1" aliases="cn, name"><maml:name>Computername</maml:name>
+<maml:Description><maml:para>The name of the computer to query. This parameter has an alias of CN and Name. The computer must be running PowerShell 3.0 or later with remoting enabled to support the CIM cmdlets.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+<dev:type><maml:name>String[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>$env:Computername</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Test</maml:name>
+<maml:Description><maml:para>Use Test-WSMan to verify computer can be reached and is running v3 or later of the Windows Management Framework stack.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none"><maml:name>CimSession</maml:name>
+<maml:Description><maml:para>
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">CimSession[]</command:parameterValue>
+<dev:type><maml:name>CimSession[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>[string[]]</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+<command:inputType><dev:type><maml:name>[Microsoft.Management.Infrastructure.CimSession[]]</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>[MyUptime]</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+Last Updated: July 19, 2016 
+Version     : 4.0
+</maml:para>
+<maml:para>Learn more about PowerShell: http://jdhitsolutions.com/blog/essential-powershell-resources/
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+<dev:code>PS C:\&gt; get-myuptime chi-dc01,chi-fp02
+
+Computername       LastRebootTime            Days Hours Minutes Seconds
+------------       --------------            ---- ----- ------- -------
+CHI-DC01           7/18/2016 3:17:48 PM         0    21       8      39
+CHI-FP02           6/15/2016 12:49:26 PM       33    23      37       2</dev:code>
+<dev:remarks><maml:para>Formatted results for multiple computers. You can also pipe computer names into this command.
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+<dev:code>PS C:\&gt; Get-myuptime | format-list
+
+Computername : WIN81-ENT-01
+LastReboot   : 7/15/2016 8:28:24 AM
+Uptime       : 4.03:58:24.7545765</dev:code>
+<dev:remarks><maml:para>Get uptime for the local computer and use the custom list formatting view.
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+<dev:code>PS C:\&gt; $c = "chi-dc01","chi-core01","chi-dc02","chi-hvr2","chi-dc04
+PS C:\&gt; $c | get-myuptime -test | Sort LastRebootTime -Descending
+
+WARNING: CHI-DC02 is not accessible via the WSMan protocol.
+
+Computername       LastRebootTime            Days Hours Minutes Seconds
+------------       --------------            ---- ----- ------- -------
+CHI-DC01           7/18/2016 3:17:48 PM         0    21      10       0
+CHI-HVR2           7/18/2016 3:15:04 PM         0    21      12      47
+CHI-CORE01         7/18/2016 3:14:57 PM         0    21      12      51
+CHI-DC04           7/5/2016 4:20:18 PM         13    20       7      34</dev:code>
+<dev:remarks><maml:para>Query a list of computers, testing for WSMan and sort on the LastRebootTime
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>-------------------------- EXAMPLE 4 --------------------------</maml:title>
+<dev:code>PS C:\&gt; "chi-dc01","chi-core01","chi-hvr2","chi-dc04" | Get-myuptime | where Days -le 7
+
+Computername       LastRebootTime            Days Hours Minutes Seconds
+------------       --------------            ---- ----- ------- -------
+CHI-DC01           7/18/2016 3:17:48 PM         0    21      11      36
+CHI-CORE01         7/18/2016 3:14:57 PM         0    21      14      27
+CHI-HVR2           7/18/2016 3:15:04 PM         0    21      14      21</dev:code>
+<dev:remarks><maml:para>Get uptime for a list of computers and filter out those that have been running for longer than 7 days.
+</maml:para>
+<maml:para>The first command creates an array of computer names. The second command gets uptime but tests each computer first.
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>-------------------------- EXAMPLE 5 --------------------------</maml:title>
+<dev:code>PS C:\&gt; get-myuptime "chi-dc01","chi-core01","chi-dc04" | Sort Uptime | Select Computername,Uptime
+
+Computername Uptime             
+------------ ------             
+CHI-DC01     21:12:33.4281159   
+CHI-CORE01   21:15:24.2350091   
+CHI-DC04     13.20:10:03.9522704</dev:code>
+<dev:remarks><maml:para>Get uptime for a set of servers, sort on the uptime and display computername and uptime.
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>-------------------------- EXAMPLE 6 --------------------------</maml:title>
+<dev:code>PS C:\&gt; $cs = New-CimSession chi-dc01,chi-dc04,chi-core01 
+PS C:\&gt; $cs | Get-MyUptime | Select Computername,Uptime
+
+Computername Uptime             
+------------ ------             
+CHI-DC01     21:14:29.2166176   
+CHI-CORE01   21:17:20.0236754   
+CHI-DC04     13.20:11:59.7334703</dev:code>
+<dev:remarks><maml:para>Get uptime for a list of computers via CIM Sessions.
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks><maml:navigationLink><maml:linkText>Update-MyUptime</maml:linkText>
+<maml:uri></maml:uri>
+</maml:navigationLink>
+<maml:navigationLink><maml:linkText>Get-Ciminstance</maml:linkText>
+<maml:uri></maml:uri>
+</maml:navigationLink>
+<maml:navigationLink><maml:linkText>Test-WSMan</maml:linkText>
+<maml:uri></maml:uri>
+</maml:navigationLink>
+<maml:navigationLink><maml:linkText>https://www.petri.com/how-to-create-a-powershell-module</maml:linkText>
+<maml:uri>https://www.petri.com/how-to-create-a-powershell-module</maml:uri>
+</maml:navigationLink>
+</command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Update-MyUptime</command:name>
+<command:verb>Update</command:verb>
+<command:noun>MyUptime</command:noun>
+<maml:description><maml:para>Refresh a saved MyUptime object.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>If you run Get-MyUptime and save the results to a variable, some properties like Uptime won't be updated the next time you look at the variable. You can use this command to refresh or update the MyUptime objects.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Update-MyUptime</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none"><maml:name>ComputerObject</maml:name>
+<maml:Description><maml:para>A computer object created with Get-MyUptime
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">MyUptime[]</command:parameterValue>
+<dev:type><maml:name>MyUptime[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Passthru</maml:name>
+<maml:Description><maml:para>
+</maml:para>
+</maml:Description>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none"><maml:name>ComputerObject</maml:name>
+<maml:Description><maml:para>A computer object created with Get-MyUptime
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">MyUptime[]</command:parameterValue>
+<dev:type><maml:name>MyUptime[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue></dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Passthru</maml:name>
+<maml:Description><maml:para>
+</maml:para>
+</maml:Description>
+<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>MyUptime[]</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>MyUptime</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+Last Updated: July 19, 2016 
+Version     : 4.0
+</maml:para>
+<maml:para>Learn more about PowerShell: http://jdhitsolutions.com/blog/essential-powershell-resources/
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+<dev:code>PS C:\&gt; $b = Get-Myuptime chi-p50
+PS C:\&gt; $b | Select computername,uptime
+
+Computername Uptime            
+------------ ------            
+CHI-P50      2.00:06:47.1523262
+
+PS C:\&gt; $b | Update-MyUptime
+PS C:\&gt; $b | Select computername,uptime
+
+Computername Uptime            
+------------ ------            
+CHI-P50      2.00:07:39.4540150</dev:code>
+<dev:remarks><maml:para>
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks><maml:navigationLink><maml:linkText>Get-MyUptime</maml:linkText>
+<maml:uri></maml:uri>
+</maml:navigationLink>
+</command:relatedLinks>
+</command:command>
+</helpItems>
