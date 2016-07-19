@@ -325,7 +325,4 @@ End {
 #define a custom alias
 Set-Alias -Name gmu -Value Get-MyUptime
 
-#export function from module
-Export-ModuleMember -Function Get-MyUptime -Alias *
-
 #endregion

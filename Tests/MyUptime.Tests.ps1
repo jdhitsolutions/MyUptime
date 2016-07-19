@@ -1,8 +1,9 @@
 ﻿#requires -version 5.0
 
+#My Pester tests
+
 Import-Module MyUptime
 
-#Pester tests
 InModuleScope MyUptime {
 Describe "Get-MyUptime" {
     
