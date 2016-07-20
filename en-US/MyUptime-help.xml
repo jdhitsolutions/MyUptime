@@ -36,15 +36,20 @@
 </command:parameters>
 <command:inputTypes><command:inputType><dev:type><maml:name>MyUptime[]</maml:name>
 </dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
 </command:inputType>
 </command:inputTypes>
 <command:returnValues><command:returnValue><dev:type><maml:name>MyLocalTime</maml:name>
 </dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
 </command:returnValue>
 </command:returnValues>
-<maml:alertSet><maml:alert>
-<maml:para>
-Last Updated: July 19, 2016
+<maml:alertSet><maml:alert><maml:para>
+Last Updated: July 19, 2016 
 Version     : 4.0
 </maml:para>
 <maml:para>Learn more about PowerShell: http://jdhitsolutions.com/blog/essential-powershell-resources/
@@ -337,7 +342,7 @@ CHI-DC04     13.20:11:59.7334703</dev:code>
 <maml:uri></maml:uri>
 </maml:navigationLink>
 <maml:navigationLink><maml:linkText>https://www.petri.com/how-to-create-a-powershell-module</maml:linkText>
-<maml:uri>https://www.petri.com/how-to-create-a-powershell-module</maml:uri>
+<maml:uri></maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
