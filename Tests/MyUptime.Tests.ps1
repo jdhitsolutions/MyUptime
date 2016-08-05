@@ -1,8 +1,8 @@
 ﻿#requires -version 5.0
 
-#My Pester tests
+#Pester tests for MyUptime
 
-Import-Module MyUptime
+#Import-Module MyUptime
 
 InModuleScope MyUptime {
 Describe "Get-MyUptime" {
@@ -16,7 +16,7 @@ Describe "Get-MyUptime" {
     }
     It "Should get a MyUptime object with no parameters" {
       $a = Get-MyUptime
-      $a.psobject.TypeNames[0] | Should be 'My.Uptime'
+      $a.psobject.TypeNames[0] | Should be 'MyUptime'
     }
 
     #mock and test an internal function to make sure it is called
@@ -34,8 +34,8 @@ Describe "Get-MyUptime" {
         It "LastRebootTime should be a [DateTime]" {
             $result.lastRebootTime.GetType().Name | Should Be "DateTime"
         }
-        It "Uptime should be a [String]" {
-            $result.Uptime.GetType().Name | Should Be "String"
+        It "Uptime should be a [timespan]" {
+            $result.Uptime.GetType().Name | Should Be "timespan"
         }
     }
     Context "Test parameter input" {
