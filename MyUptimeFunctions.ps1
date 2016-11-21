@@ -116,9 +116,9 @@ End {
 Function Get-MyTimeZone {
 [cmdletbinding()]
 Param(
-[Parameter(Position = 0, Mandatory, ValueFromPipeline )]
+[Parameter(Position = 0, ValueFromPipeline )]
 [ValidateNotNullorEmpty()]
-[MyUptime[]]$ComputerObject
+[MyUptime[]]$ComputerObject = (Get-MyUptime)
 )
 
 Begin {
@@ -144,9 +144,9 @@ End {
 Function Get-MyLocalTime {
 [cmdletbinding()]
 Param(
-[Parameter(Position = 0, ValueFromPipeline, Mandatory)]
+[Parameter(Position = 0, ValueFromPipeline)]
 [ValidateNotNullorEmpty()]
-[MyUptime[]]$ComputerObject
+[MyUptime[]]$ComputerObject = (Get-MyUptime)
 )
 
 Begin {

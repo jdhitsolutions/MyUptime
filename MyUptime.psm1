@@ -82,7 +82,7 @@ MyUptime ( [Microsoft.Management.Infrastructure.CimSession]$CimSession) {
  
   Try {
     $data = Get-CimInstance -classname Win32_OperatingSystem -cimsession $CimSession -ErrorAction Stop
-    write-verbose ($data | out-string)
+    Write-Verbose ($data | Out-String)
     $this.Computername = $data.CSName
     $this.LastRebootTime = $data.LastBootUpTime
     $this.CimSession = $True
@@ -97,14 +97,14 @@ MyUptime ( [Microsoft.Management.Infrastructure.CimSession]$CimSession) {
   catch {
     Write-Error "[$($CimSession.Computername)] $($_.exception.message)"
   }
-
-
+  
 }
+
 MyUptime ([string]$Computername) {
 
   Try {
     $data = Get-CimInstance -classname Win32_OperatingSystem -ComputerName $computername -ErrorAction Stop
-    write-verbose ($data | out-string)
+    Write-Verbose ($data | Out-String)
     $this.Computername = $data.CSName
     $this.LastRebootTime = $data.LastBootUpTime
     $Up = (Get-Date) - $data.LastBootUpTime
