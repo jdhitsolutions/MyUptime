@@ -1,6 +1,4 @@
-﻿#requires -version 4.0
-
-
+﻿
 Class MyUptime {
 
 #properties
@@ -53,9 +51,22 @@ hidden[boolean]$CimSession
     else {
         $cimHash.Add("Computername",$this.computername)
     }
-    $result = Get-CimInstance @cimHash | 
+    $data = Get-CimInstance @cimHash
+
+    $cimhash.classname = "Win32_Computersystem"
+    $cimhash.property = "CurrentTimeZone"
+
+    $result = [PSCustomObject]@{
+        Computername = $data.PSComputername.toUpper()
+        Caption = $data.Caption
+        CurrentTimeZone = (Get-Ciminstance @cimHash).CurrentTimeZone
+    }
+    <#
+    CurrentTimeZone = ($data |Get-CimAssociatedInstance -resultClassName win32_computersystem).CurrentTimeZone
+    $result = Get-CimInstance @cimHash -pipelinevariable pv | 
     Select-Object -Property @{Name="Computername";Expression={$_.PSComputername.ToUpper()}},
-    Caption,@{Name="CurrentTimeZone";Expression={ ($_ | Get-CimAssociatedInstance).CurrentTimeZone}}
+    Caption,@{Name="CurrentTimeZone";Expression={ $pv | Get-CimAssociatedInstance -resultClassName win32_computersystem}}
+    #>
     return $result
 }
 
@@ -126,12 +137,3 @@ MyUptime ([string]$Computername) {
 #load external functions
 . $PSScriptRoot\MyUptimeFunctions.ps1
 
-#region Module options
-
-#define a custom alias
-Set-Alias -Name gmu -Value Get-MyUptime
-Set-Alias -name gtz -Value Get-MyTimeZone
-Set-Alias -Name glt -Value Get-MyLocalTime
-Set-Alias -Name umu -Value Update-MyUptime
-
-#endregion

@@ -1,5 +1,4 @@
-﻿#requires -version 5.0
-
+﻿
 #define a private function to be used in this command
 Function IsWsManAvailable {
 [cmdletbinding()]
@@ -24,8 +23,9 @@ Catch {
 
 Function Get-MyUptime {
 
-
 [cmdletbinding(DefaultParameterSetName="Name")]
+[OutputType("myUptime")]
+[alias("gmu")]
 
 Param(
 [Parameter(
@@ -115,10 +115,13 @@ End {
 
 Function Get-MyTimeZone {
 [cmdletbinding()]
+[OutputType("myTimezone")]
+[alias("gtz")]
+
 Param(
 [Parameter(Position = 0, ValueFromPipeline )]
 [ValidateNotNullorEmpty()]
-[MyUptime[]]$ComputerObject = (Get-MyUptime)
+[MyUptime[]]$ComputerObject = (Get-MyUptime -Computername $env:COMPUTERNAME)
 )
 
 Begin {
@@ -127,7 +130,8 @@ Begin {
 
 Process {
     foreach ($item in $computerObject) {
-        Write-Verbose "Processing $($item.Computername)"
+        Write-Verbose "[PROCESS] Processing $($item.Computername)"
+        Write-Verbose "[PROCESS] Invoking GetTimeZone()"
         $obj = $item.GetTimezone()
         $obj.psobject.typenames.insert(0,"myTimeZone")
         $obj
@@ -143,6 +147,9 @@ End {
 
 Function Get-MyLocalTime {
 [cmdletbinding()]
+[OutputType("myLocalTime")]
+[alias('glt')]
+
 Param(
 [Parameter(Position = 0, ValueFromPipeline)]
 [ValidateNotNullorEmpty()]
@@ -155,7 +162,8 @@ Begin {
 
 Process {
     foreach ($item in $computerObject) {
-        Write-Verbose "Processing $($item.Computername)"
+        Write-Verbose "[PROCESS] Processing $($item.Computername)"
+        Write-Verbose "[PROCESS] Invoking GetLocalTime()"
         $obj = $item.GetLocalTime()
         $obj.psobject.typenames.insert(0,"myLocalTime")
         $obj
@@ -171,6 +179,9 @@ End {
 
 Function Update-MyUptime {
 [cmdletbinding()]
+[OutputType("None","myUptime")]
+[alias('umu')]
+
 Param(
 [Parameter(Position = 0, ValueFromPipeline, Mandatory)]
 [ValidateNotNullorEmpty()]

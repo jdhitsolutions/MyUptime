@@ -1,4 +1,4 @@
-TOPIC
+﻿TOPIC
     about_myuptime
 
 SHORT DESCRIPTION
@@ -22,7 +22,7 @@ EXAMPLES
     
     Computername     LastRebootTime           Days Hours Minutes Seconds
     ------------     --------------           ---- ----- ------- -------
-    CHI-CORE01       7/18/2016 3:33:12 PM        1    18      51      29
+    CHI-CORE01       7/18/2018 3:33:12 PM        1    18      51      29
 
     Get uptime from multiple servers using the custom table view:
 
@@ -30,9 +30,9 @@ EXAMPLES
     
     Computername     LastRebootTime                        Uptime
     ------------     --------------                        ------
-    CHI-CORE01       7/18/2016 3:33:12 PM      1.18:52:39.6824738
-    CHI-P50          7/20/2016 9:59:29 AM        00:26:22.7829936
-    CHI-FP02         6/15/2016 1:07:42 PM     34.21:18:09.9342691
+    CHI-CORE01       7/18/2018 3:33:12 PM      1.18:52:39.6824738
+    CHI-P50          7/20/2018 9:59:29 AM        00:26:22.7829936
+    CHI-FP02         6/15/2018 1:07:42 PM     34.21:18:09.9342691
 
     Using CIM Sessions:
 
@@ -41,10 +41,10 @@ EXAMPLES
     
     Computername     LastRebootTime           Days Hours Minutes Seconds
     ------------     --------------           ---- ----- ------- -------
-    CHI-FP02         6/15/2016 1:07:42 PM       34    21      20      37
-    CHI-DC04         7/5/2016 4:36:59 PM        14    17      51      20
-    CHI-CORE01       7/18/2016 3:33:12 PM        1    18      55       8
-    CHI-P50          7/20/2016 9:59:29 AM        0     0      28      51
+    CHI-FP02         6/15/2018 1:07:42 PM       34    21      20      37
+    CHI-DC04         7/5/2018 4:36:59 PM        14    17      51      20
+    CHI-CORE01       7/18/2018 3:33:12 PM        1    18      55       8
+    CHI-P50          7/20/2018 9:59:29 AM        0     0      28      51
 
     The preceding example also saved the output to a variable which can be used
     later to get time zone and local time information.
@@ -62,10 +62,10 @@ EXAMPLES
     
     Computername LocalDateTime
     ------------ -------------
-    CHI-P50      7/20/2016 10:28:42 AM
-    CHI-DC04     7/20/2016 10:28:42 AM
-    CHI-FP02     7/20/2016 10:28:42 AM
-    CHI-CORE01   7/20/2016 10:28:42 AM
+    CHI-P50      7/20/2018 10:28:42 AM
+    CHI-DC04     7/20/2018 10:28:42 AM
+    CHI-FP02     7/20/2018 10:28:42 AM
+    CHI-CORE01   7/20/2018 10:28:42 AM
 
     Finally, when using a variable, you may want to refresh it to get current
     data.
@@ -94,11 +94,10 @@ TROUBLESHOOTING NOTE
     suggestions on the project's GitHub page.
 
 SEE ALSO
-    Get-CimInstance 
-    https://www.petri.com/how-to-create-a-powershell-module
+    Get-CimInstance https://www.petri.com/how-to-create-a-powershell-module
     https://github.com/jdhitsolutions/MyUptime
 
 KEYWORDS
-    uptime
-    time
+    - uptime
+    - time
 

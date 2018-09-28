@@ -1,8 +1,7 @@
-﻿#requires -version 5.0
+﻿
+#Pester tests for MyUptime using the local computer
 
-#Pester tests for MyUptime
-
-#Import-Module MyUptime
+Import-Module $psscriptroot\..\MyUptime -force
 
 InModuleScope MyUptime {
 Describe "Get-MyUptime" {
@@ -10,8 +9,8 @@ Describe "Get-MyUptime" {
     It "Should run without error by default" {
         {Get-MyUptime} | Should Not Throw
     }
-    It "Should write a Warning with a bad computername" {
-        $test = Get-MyUptime -Computername "FOO" -WarningAction SilentlyContinue -WarningVariable w
+    It "Should write a Warning with a bad computername when tested" {
+        $test = Get-MyUptime -Computername "FOO" -Test -WarningAction SilentlyContinue -WarningVariable w
         $w | should be $True
     }
     It "Should get a MyUptime object with no parameters" {
@@ -55,7 +54,7 @@ Describe "Get-MyUptime" {
             $result =  Get-MyUptime -CimSession $cs
             $result.count | Should Be 3
         }
-        It "Should have 3 results from PIPED  CIMSessions" {
+        It "Should have 3 results from PIPED CIMSessions" {
             $result = $cs | Get-MyUptime
             $result.count | Should Be 3
         }
