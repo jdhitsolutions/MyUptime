@@ -12,4 +12,6 @@ This module has been published to the PowerShell Gallery.
 Install-Module myUptime
 ```
 
-_last updated 28 September 2018_
+Because the commands in this module use the CIM cmdlets, the module is not compatible with PowerShell Core.
+
+_last updated 23 October 2018_

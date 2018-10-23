@@ -1,5 +1,5 @@
 ﻿TOPIC
-    about_myuptime
+    about_MyUptime
 
 SHORT DESCRIPTION
     The commands in this module are intended to make it easier to get uptime
@@ -11,6 +11,7 @@ LONG DESCRIPTION
     remote computer must be running at least PowerShell 3.0 and be able to
     respond to the Test-WSMan cmdlet. The default behavior is to use a computer
     name, but you can also use a pre-defined CimSession.
+    
     The commands in this module will write a custom object to the pipeline. The
     main command will create an uptime object. You can use this object to pipe
     to other commands to get time zone and local time information.
